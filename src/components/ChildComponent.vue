@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p>This is child component</p>
-    <small>{{ number }}</small>
-    <button @click="sendParent">send to parent</button>
+<!--    <p>This is child component</p>-->
+<!--    <small>{{ number }}</small>-->
+<!--    <button @click="sendParent">send to parent</button>-->
 
   </div>
 </template>
