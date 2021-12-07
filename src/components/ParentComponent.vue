@@ -1,10 +1,10 @@
 <template>
   <div>
     <input type="number" v-model="columnsCount">
-    <button @click="setColumnsCount()">Submit</button>
-    <div class="container" v-if="actualCount">
+    <button @click="generateColumns()">Submit</button>
+    <div class="container">
       <ColumnComponent
-        v-for="n in Number(actualCount)"
+        v-bind:key="element.background" :element="element" v-for="element in elements"
       />
     </div>
   </div>
@@ -15,17 +15,21 @@ import ColumnComponent from "./ColumnComponent";
 
 export default {
   components: {ColumnComponent},
-  props: [
-    'actualCount'
-  ],
   data() {
     return {
-      columnsCount: 0
+      'columnsCount': null,
+      'elements': []
     }
   },
   methods: {
-    setColumnsCount() {
-      this.actualCount = this.columnsCount;
+    generateColumns() {
+      this.elements = []; 
+
+      for (let i = 0; i < this.columnsCount; i++) {
+        this.elements.push({
+          'background': '#' + Math.floor(Math.random()*16777215).toString(16)
+        })
+      }
     }
   }
 }
