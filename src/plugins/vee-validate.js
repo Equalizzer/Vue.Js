@@ -1,10 +1,15 @@
 import {extend} from "vee-validate";
-import {required, email} from "vee-validate/dist/rules";
+import {required, email, numeric} from "vee-validate/dist/rules";
 
 extend("required", {
   ...required,
   message: "*Заполнение необходимо"
 });
+
+extend("numeric", {
+  ...numeric,
+  massage: "*Petq a tiv lini mutqagrvac"
+})
 
 extend("password", {
   message: "*Используйте 8+ символов, состоящих из букв, цифр и символов.",
