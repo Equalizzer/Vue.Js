@@ -1,4 +1,4 @@
-import Login from './Login2'
+import Login from './Login'
 import Register from './Register'
 import ForgotPassword from './ForgotPassword'
 
